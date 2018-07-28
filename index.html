@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Math Game</title>
+
+        <!-- Bootstrap CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css" />
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+    <body class="bg-light-yellow">
+        <div class="container mh6 ">
+            <div class="row tc silver garamond">
+                <h1 class="hello"></h1>
+            </div>
+            <div class="row relative">
+                <div class="col-sm-6 col-sm-offset-3 relative bg-light-green pa5 br4 shadow-5">
+                    <div class="row status">
+                        <div class=" col-sm-4">
+                            <div class="attempted bg-light-red hidden pa3 br4 text-center shadow-5">
+                                Attempted:
+                                <span class="attempted">0</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="correct text-success absolute w-90 top-0 left-0 hidden  near-white bg-dark-green   pa3 br4 text-center shadow-5">
+                                Correct
+                            </div>
+                            <div class="try-again text-danger absolute w-90 top-0 left-0 hidden near-white bg-dark-red   pa3 br4 text-center shadow-5">
+                                Try again!
+                            </div>
+                        </div>
+                        <div class=" col-sm-4">
+                            <div class="bg-light-pink pa3 br4 text-center shadow-5">
+                                Score: <span class="score">0</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row question mt3">
+                        <div class="col-sm-12">
+                            <div class="f1 white bg-light-purple pa2 br4 tc">
+                                <h1 class="question"><span class="unitA">_</span> x <span class="unitB">_</span></h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row instructions mt3">
+                        <div class="col-sm-12">
+                            <div class="alert alert-info mb0 tc br4">
+                                <strong>Click on the correct answer</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row answers mt3">
+                        <div class="col-sm-3">
+                            <button type="button" class="pa4 grow w-100 shadow-5 bg-gold f2 white">_</button>
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="button" class="pa4 grow w-100 shadow-5 bg-gold f2 white">_</button>
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="button" class="pa4 grow w-100 shadow-5 bg-gold f2 white">_</button>
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="button" class="pa4 grow w-100 shadow-5 bg-gold f2 white">_</button>
+                        </div>
+                    </div>
+                    <div class="row reset mt3">
+                        <div class="col-sm-3 col-sm-offset-4">
+                            <button type="button" class="grow reset near-white bg-light-blue pa3  tc shadow-5">
+                                Reset game
+                            </button>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="timer  near-white bg-orange pa3 tc shadow-5">
+                                Time remaining: <span class="time-remaining">60</span> sec
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gameover f1 hidden tc game-over pa5 br5 bg-red absolute white shadow-5" style=" top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                        <h3 class="pa0 ma0">Game over</h3>
+                        <h5>Your score: <span class="your-score">0</span></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="script.js"></script>
+        <script>
+            var i = 0;
+                var txt = "Hello, I'm reviewing my JS skills."; /* The text */
+                var speed = 50; /* The speed/duration of the effect in milliseconds */
+
+                function typeWriter() {
+
+                    if (i < txt.length) {
+                        document.querySelector("h1.hello").innerHTML += txt.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, speed);
+                    }
+                }
+                typeWriter();
+        </script>
+    </body>
+</html>
